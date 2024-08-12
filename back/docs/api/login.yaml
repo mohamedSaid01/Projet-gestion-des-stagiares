@@ -1,0 +1,33 @@
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      description: Authenticates a user with provided credentials.
+      requestBody:
+        description: Login
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: name@gmail.com 
+                password: 
+                  type: string
+                  example: password 
+        required: true
+      responses:
+        200:
+          description: User authenticated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: message that developer can use
+                    example: "Logged in successfully"
